@@ -4,27 +4,27 @@ Em construção...
 
 ### Instalação inicial
 #### NVM (Node Version Manager) - https://github.com/nvm-sh/nvm
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
-nvm install 16.10.0
+    nvm install 16.10.0
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 
 #### Ionic client
-npm install -g @ionic/cli
+    npm install -g @ionic/cli
 
 #### Cordova
-npm i -g cordova
-ionic integrations disable capacitor
+    npm i -g cordova
+    ionic integrations disable capacitor
 
 ###### Cordova android version
 https://cordova.apache.org/docs/en/11.x/guide/platforms/android/
 
-ionic cordova platform rm android
-cordova platform add android@8.0.0
+    ionic cordova platform rm android
+    cordova platform add android@8.0.0
 
 ###### Cordova telemetria
-cordova telemetry off
+    cordova telemetry off
 
 ###### Build android
-ionic cordova build android --prod --release --verbose
+    ionic cordova build android --prod --release --verbose
 
 ### Fontes
 https://github.com/nvm-sh/nvm
