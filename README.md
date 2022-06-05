@@ -4,9 +4,9 @@ Em construção...
 
 ### Instalação inicial
 #### NVM (Node Version Manager) - https://github.com/nvm-sh/nvm
-    nvm install 16.10.0
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
-
+    nvm install 18.3.0
+    
 #### Ionic client
     npm install -g @ionic/cli
 
