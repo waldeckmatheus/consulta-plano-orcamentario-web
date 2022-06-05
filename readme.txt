@@ -1,25 +1,66 @@
-#https://hub.docker.com/r/androidsdk/android-21
-#https://ionicframework.com/docs/components
-#https://angular.io/docs
-#https://ionicframework.com/docs/cli/commands/capacitor-build
-#https://cordova.apache.org/docs/en/11.x/guide/overview/index.html
-#https://github.com/apache/cordova-android/releases
-#https://ionicframework.com/docs/intro/cli
-#https://github.com/nvm-sh/nvm
-#https://ionicframework.com/docs/developing/android
-#https://gradle.org/install/
+## Consulta Plano Orçamentário App
 
-#https://pixabay.com/photos/money-coin-investment-business-2724241/
+Em construção...
 
+### Instalação inicial
+#### NVM (Node Version Manager) - https://github.com/nvm-sh/nvm
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 nvm install 16.10.0
-npm install -g @ionic/cli
-npm i -g cordova
 
+#### Ionic client
+npm install -g @ionic/cli
+
+#### Cordova
+npm i -g cordova
 ionic integrations disable capacitor
+
+###### Cordova android version
+https://cordova.apache.org/docs/en/11.x/guide/platforms/android/
 
 ionic cordova platform rm android
 cordova platform add android@8.0.0
 
+###### Cordova telemetria
 cordova telemetry off
+
+###### Build android
 ionic cordova build android --prod --release --verbose
+
+### Fontes
+https://github.com/nvm-sh/nvm
+https://angular.io/docs
+https://ionicframework.com/docs/intro/cli
+https://ionicframework.com/docs/components
+https://ionicframework.com/docs/cli/commands/capacitor-build
+https://ionicframework.com/docs/developing/android
+https://cordova.apache.org/docs/en/11.x/guide/overview/index.html
+https://github.com/apache/cordova-android/releases
+https://hub.docker.com/r/androidsdk/android-31
+https://docs.docker.com/compose/
+https://gradle.org/install/
+
+## UML diagrams
+
+You can render UML diagrams using [Mermaid](https://mermaidjs.github.io/). For example, this will produce a sequence diagram:
+
+```mermaid
+sequenceDiagram
+Alice ->> Bob: Hello Bob, how are you?
+Bob-->>John: How about you John?
+Bob--x Alice: I am good thanks!
+Bob-x John: I am good thanks!
+Note right of John: Bob thinks a long<br/>long time, so long<br/>that the text does<br/>not fit on a row.
+
+Bob-->Alice: Checking with John...
+Alice->John: Yes... John, how are you?
+```
+
+And this will produce a flow chart:
+
+```mermaid
+graph LR
+A[Square Rect] -- Link text --> B((Circle))
+A --> C(Round Rect)
+B --> D{Rhombus}
+C --> D
+```
