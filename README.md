@@ -1,33 +1,46 @@
 
-## Consulta Plano Orçamentário App
 
-`Autoestudo Plano Orçamentário`: https://play.google.com/store/apps/details?id=br.com.waldeckmatheus.cpo
+## Consulta Plano Orçamentário App
 
 Em construção...
 
-### Instalação inicial
-#### NVM (Node Version Manager) - https://github.com/nvm-sh/nvm
-    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
-    nvm install 18.3.0
+### Tabela de conteúdo do readme
+- [Publicações](#publicações)
+	 - [Google Play](#google-play)
+- [Instalação inicial](#instalação)
+  - [NVM](#node-version-manager-nvm)
+  - [Ionic/cli](#ionic-client)
+  - [Cordova](#cordova)
+    - [Android Version](#cordova-android-version)
+    - [Build for android](#build-android)
+  - [Fontes](#fontes)
+
+### Publicações
+#### Google Play
+- App: Autoestudo Plano Orçamentário
+	- Disponível em: https://play.google.com/store/apps/details?id=br.com.waldeckmatheus.cpo
+
+### Instalação
+#### Node version manager (NVM)
+    $ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+    $ nvm install 18.3.0
     
 #### Ionic client
-    npm install -g @ionic/cli
+    $ npm install -g @ionic/cli
 
 #### Cordova
-    npm i -g cordova
-    ionic integrations disable capacitor
+    $ npm i -g cordova
+    $ ionic integrations disable capacitor
 
-###### Cordova android version
-https://cordova.apache.org/docs/en/11.x/guide/platforms/android/
+###### Cordova Android Version
+    $ ionic cordova platform rm android
+    $ cordova platform add android@8.0.0
 
-    ionic cordova platform rm android
-    cordova platform add android@8.0.0
-
-###### Cordova telemetria
-    cordova telemetry off
+###### Cordova Telemetria
+    $ cordova telemetry [on|off]
 
 ###### Build android
-    ionic cordova build android --prod --release --verbose
+    $ ionic cordova build android --prod --release --verbose
 
 ### Fontes
 | Nome  | URL |
