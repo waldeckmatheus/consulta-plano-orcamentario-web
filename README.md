@@ -27,17 +27,19 @@ https://cordova.apache.org/docs/en/11.x/guide/platforms/android/
     ionic cordova build android --prod --release --verbose
 
 ### Fontes
-https://github.com/nvm-sh/nvm
-https://angular.io/docs
-https://ionicframework.com/docs/intro/cli
-https://ionicframework.com/docs/components
-https://ionicframework.com/docs/cli/commands/capacitor-build
-https://ionicframework.com/docs/developing/android
-https://cordova.apache.org/docs/en/11.x/guide/overview/index.html
-https://github.com/apache/cordova-android/releases
-https://hub.docker.com/r/androidsdk/android-31
-https://docs.docker.com/compose/
-https://gradle.org/install/
+| Nome  | URL |
+|--|--|
+| NVM  | https://github.com/nvm-sh/nvm |
+| Angular | https://angular.io/docs |
+| Ionic/Cli | https://ionicframework.com/docs/intro/cli |
+| Ionic components | https://ionicframework.com/docs/components |
+| Capacitor Build | https://ionicframework.com/docs/cli/commands/capacitor-build |
+| Ionic Android | https://ionicframework.com/docs/developing/android |
+| Apache cordova | https://cordova.apache.org/docs/en/11.x/guide/overview/index.html |
+| Cordova Android | https://github.com/apache/cordova-android/releases |
+| Docker Android | https://hub.docker.com/r/androidsdk/android-31 |
+| Docker compose | https://docs.docker.com/compose/ |
+| Gradle | https://gradle.org/install/ |
 
 ## UML diagrams
 
