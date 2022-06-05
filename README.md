@@ -8,7 +8,7 @@ Em construção...
 ### Tabela de conteúdo do readme
 - [Publicações](#publicações)
 	 - [Google Play](#google-play)
-- [Instalação inicial](#instalação)
+- [Instalação inicial](#instalação-inicial)
   - [Node Version Manager (NVM)](#node-version-manager-nvm)
   - [Ionic Client](#ionic-client)
   - [Cordova](#cordova)
@@ -21,7 +21,7 @@ Em construção...
 - App: Autoestudo Plano Orçamentário
 	- Disponível em: https://play.google.com/store/apps/details?id=br.com.waldeckmatheus.cpo
 
-### Instalação
+### Instalação inicial
 #### Node version manager (NVM)
     $ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
     $ nvm install 18.3.0
