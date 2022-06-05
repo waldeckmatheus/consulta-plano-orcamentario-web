@@ -13,7 +13,7 @@ Em construção...
   - [Ionic Client](#ionic-client)
   - [Cordova](#cordova)
     - [Android Version](#cordova-android-version)
-  - [Build for Android](#build-android)
+  - [Build for Android](#build-for-android)
   - [Fontes](#fontes)
 
 ### Publicações
