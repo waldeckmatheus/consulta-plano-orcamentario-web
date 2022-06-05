@@ -1,5 +1,6 @@
 
 
+
 ## Consulta Plano Orçamentário App
 
 Em construção...
@@ -8,11 +9,11 @@ Em construção...
 - [Publicações](#publicações)
 	 - [Google Play](#google-play)
 - [Instalação inicial](#instalação)
-  - [NVM](#node-version-manager-nvm)
-  - [Ionic/cli](#ionic-client)
+  - [Node Version Manager (NVM)](#node-version-manager-nvm)
+  - [Ionic Client](#ionic-client)
   - [Cordova](#cordova)
     - [Android Version](#cordova-android-version)
-    - [Build for android](#build-android)
+  - [Build for Android](#build-android)
   - [Fontes](#fontes)
 
 ### Publicações
@@ -39,7 +40,7 @@ Em construção...
 ###### Cordova Telemetria
     $ cordova telemetry [on|off]
 
-###### Build android
+#### Build for android
     $ ionic cordova build android --prod --release --verbose
 
 ### Fontes
@@ -48,13 +49,13 @@ Em construção...
 | NVM  | https://github.com/nvm-sh/nvm |
 | Angular | https://angular.io/docs |
 | Ionic/Cli | https://ionicframework.com/docs/intro/cli |
-| Ionic components | https://ionicframework.com/docs/components |
+| Ionic Components | https://ionicframework.com/docs/components |
 | Capacitor Build | https://ionicframework.com/docs/cli/commands/capacitor-build |
 | Ionic Android | https://ionicframework.com/docs/developing/android |
-| Apache cordova | https://cordova.apache.org/docs/en/11.x/guide/overview/index.html |
+| Apache Cordova | https://cordova.apache.org/docs/en/11.x/guide/overview/index.html |
 | Cordova Android | https://github.com/apache/cordova-android/releases |
 | Docker Android | https://hub.docker.com/r/androidsdk/android-31 |
-| Docker compose | https://docs.docker.com/compose/ |
+| Docker Compose | https://docs.docker.com/compose/ |
 | Gradle | https://gradle.org/install/ |
 
 ## UML diagrams
