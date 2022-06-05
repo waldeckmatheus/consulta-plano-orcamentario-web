@@ -1,0 +1,62 @@
+ion-menu-button {
+  color: var(--ion-color-primary);
+}
+
+.container {
+}
+
+.container strong {
+  font-size: 20px;
+  line-height: 26px;
+}
+
+.container p {
+  font-size: 16px;
+  line-height: 22px;
+  color: #8c8c8c;
+  margin: 0;
+}
+
+.container a {
+  text-decoration: none;
+}
+.odd {
+  background: rgba(0,0,0,0.05);
+}
+.even {
+  background: rgba(0,0,0,0.01);
+}
+.test{
+  margin-top:70px;
+}
+
+ion-thumbnail {
+  width:20px;
+  height:20px;
+}
+
+img {
+width:auto !important;
+height:auto !important;
+}
+.vertical-center{
+  display: grid;
+  align-items: left;
+  justify-content: left;
+  height: 100%;
+}
+
+#containerModal {
+  text-align: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+ion-item {
+  --inner-border-width: 0px;
+}
+hr {
+  width:50%;
+  margin:0 auto;
+}

@@ -1,0 +1,11 @@
+<div class="container">
+  <div style="padding-bottom: 10px;">
+    <span class="font-weith:bold;">{{title}}</span>
+    <p> 
+      <span *ngIf="!isLink(paragraph)">{{paragraph}}</span>
+      <span *ngIf="isLink(paragraph)"><a [href]="paragraph">{{paragraph}}</a></span>
+    </p> 
+  </div>
+</div>
+
+

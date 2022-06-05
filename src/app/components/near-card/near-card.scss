@@ -1,0 +1,31 @@
+ion-menu-button {
+  color: var(--ion-color-primary);
+}
+
+.container {
+}
+
+.container strong {
+  font-size: 20px;
+  line-height: 26px;
+}
+
+.container p {
+  font-size: 16px;
+  line-height: 22px;
+  color: #8c8c8c;
+  margin: 0;
+}
+
+.container a {
+  text-decoration: none;
+}
+.odd {
+  background: rgba(0,0,0,0.05);
+}
+.even {
+  background: rgba(0,0,0,0.01);
+}
+.test{
+  margin-top:70px;
+}

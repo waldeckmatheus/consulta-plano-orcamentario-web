@@ -1,0 +1,28 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Bem-vindo</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div id="container">
+    <div style="padding-bottom: 10px;">
+      <strong class="capitalize">Conhecimentos predispostos</strong>
+    </div>
+
+    <near-card [title]="'Do objetivo primário.'" [paragraph]="'Aprendizado sobre os frameworks Ionic e Angular, utilizando as atualizações mais recentes.'"></near-card>
+    <near-card [title]="'Do objetivo secundário.'" [paragraph]="'Aprendizado sobre plano orçamentário.'"></near-card>
+    <near-card [title]="'Do conteúdo auxiliar utilizado.'" [paragraph]="'Utilização da API da transparência do Governo Federal por meio de API back-end em Java realizando cache pelo Redis.'"></near-card>
+    <near-card [title]="'Da fonte de dados utilizada.'" [paragraph]="'https://portaldatransparencia.cgu.gov.br/api-de-dados/'"></near-card>
+
+    <div style="padding-bottom: 10px;">
+      <span class="font-weith:bold;">Dos termos de uso.</span>
+      <p style="width: 99%;"> 
+        "A API de dados do Portal da Transparência do Governo Federal é de livre utilização, conforme previsto no DECRETO Nº 8.777, DE 11 DE MAIO DE 2016.". Saiba mais sobre o decreto, <span style="color:blue; cursor: pointer;" (click)="goToDecreto('8777-11-05-2016', 'Política de Dados Abertos')">clique aqui</span>.
+      </p>
+    </div>
+  </div>
+</ion-content>

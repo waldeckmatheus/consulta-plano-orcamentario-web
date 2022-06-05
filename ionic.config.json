@@ -1,0 +1,11 @@
+{
+  "name": "consulta-plano-orcamentario-web",
+  "integrations": {
+    "capacitor": {
+      "enabled": false
+    },
+    "cordova": {}
+  },
+  "type": "angular",
+  "id": "ec57f5d0"
+}

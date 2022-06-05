@@ -1,0 +1,18 @@
+version: "3"
+services:
+  main-site:
+    build:
+      context: .
+      args:
+        - ARG_ENV_APP=production
+      dockerfile: Dockerfile
+    restart: unless-stopped
+#    network_mode: host
+    image:  thedevsteps.com/prd/main-site:latest
+    ports:
+      - "8777:8777"
+    volumes:
+      - /var/www/html/:/usr/local/apache2/htdocs/
+      - /var/www/default/httpd.conf:/usr/local/apache2/conf/httpd.conf
+    environment:
+      ENV_APP: production

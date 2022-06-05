@@ -1,0 +1,67 @@
+image: arm64v8/node:16-bullseye-slim
+
+variables:
+  PROJECT_PATH_PRODUCAO: '/var/www/html/'
+  ARTEFATO: 'cpowww.tar.gz'
+  ARTEFATO_ITENS: '* .htaccess privacy.html'
+
+cache:
+  key: "$CI_COMMIT_REF_NAME"
+  paths:
+    - caches
+    - node_modules
+  untracked: true
+
+# Etapas para o build
+.build_base: &build_base
+  stage: build
+  tags:
+    - builder-arm64v8
+  artifacts:
+    name: "build_cpo"
+    paths:
+      - $ARTEFATO
+  before_script:
+    - apt update
+    - apt install python3 make -y
+    - npm install -g @ionic/cli
+    - npm install
+  after_script:
+    - cp .htaccess www/
+    - cp privacy.html www/
+    - cd www
+    - tar -czf $ARTEFATO $ARTEFATO_ITENS
+    - cp $ARTEFATO ../
+
+build_producao:
+  <<: *build_base
+  only:
+    - none
+  script:
+    - ionic build --release --prod
+
+.deploy_base: &deploy_base
+  stage: deploy
+  image: waldeckmatheusbelo/arm64v8-git:latest
+  tags:
+    - deployer-arm64v8
+  before_script:
+    - echo "$SSH_KEY_DEPLOY" | tr -d '\r' > ~/.ssh/id_rsa
+    - chmod 600 ~/.ssh/id_rsa
+    - eval "$(ssh-agent -s)"
+    - ssh-add ~/.ssh/id_rsa
+
+deploy_producao:
+  <<: *deploy_base
+  only:
+    - none
+  dependencies:
+    - build_producao
+  script:
+    - ssh-keyscan -H $PRD_SERVER_ADDRESS >> ~/.ssh/known_hosts
+    - ssh $SSH_PRD_USER@$PRD_SERVER_ADDRESS "echo 'INICIO DEPLOY' && sudo rm -r $PROJECT_PATH_PRODUCAO/* || echo 'Diretório do projeto encontra-se limpo.' && echo 'Iniciando deploy da nova versão.' "
+    - scp -r *.tar.gz $SSH_PRD_USER@$PRD_SERVER_ADDRESS:$PROJECT_PATH_PRD
+    - ssh $SSH_PRD_USER@$PRD_SERVER_ADDRESS "cd $PROJECT_PATH_PRD && sudo chown -R $SSH_PRD_USER:www-data $PROJECT_PATH_PRD && tar -xzf $ARTEFATO -C . && rm -rf $ARTEFATO && sudo chown -R $SSH_PRD_USER:www-data $PROJECT_PATH_PRD"
+  environment:
+    name: Producao
+

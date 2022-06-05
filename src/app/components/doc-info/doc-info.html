@@ -1,0 +1,20 @@
+<div class="container">
+  <div>
+    <label style="padding-left: 1% ;color: #8c8c8c;font-weight: bold;">{{docInfo.nome}}</label>
+    <ion-item [class.item-inner]="false" *ngFor="let item of docInfo.arrayDocTutorial;">
+        
+          <ion-thumbnail slot="start">
+            <a [href]="item.label" target="_blank">
+              <img [src]="item.src">
+            </a>
+          </ion-thumbnail>
+          <a [href]="item.label" target="_blank">
+            <ion-label>{{item.label}}</ion-label>
+          </a>
+    </ion-item>
+   
+    <hr>
+  </div>
+</div>
+
+
