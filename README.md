@@ -43,6 +43,9 @@ Em construção...
 #### Build for android
     $ ionic cordova build android --prod --release --verbose
 
+#### Resumo do build em container
+- https://github.com/waldeckmatheus/consulta-plano-orcamentario-web/blob/main/scriptBuildIntoContainer.sh
+
 ### Fontes
 | Nome  | URL |
 |--|--|
