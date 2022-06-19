@@ -54,7 +54,11 @@ Em construção...
 
 - Utilização de pepk (Play Encrypt Private Key)
 - Utilização da Google Play Store Public Key= "valor atribuído na encryptionkey"
-    
+   
+#### Assinatura do arquivos .aab e/ou .apk
+    $ jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore mykeystore.keystore app-release.aab myandroidalias
+    $ jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore mykeystore.keystore app-release-unsigned.apk myandroidalias
+
 ### Fontes
 | Nome  | URL |
 |--|--|
