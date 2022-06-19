@@ -1,4 +1,4 @@
-export class PlanoOrcamentario {
+export class ItemPlanoOrcamentario {
     public id: Number;
 	public codigo: String;
 	public descricao: String;

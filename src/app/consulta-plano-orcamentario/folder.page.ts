@@ -1,11 +1,12 @@
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { PlanoOrcamentario } from './plano-orcamentario';
+import { ItemPlanoOrcamentario } from './plano-orcamentario';
 import { catchError, retry } from 'rxjs/operators';
 import { throwError } from 'rxjs';
 import { AlertController, LoadingController } from '@ionic/angular';
-import { LoadingOptions } from '@ionic/core';
+import { LoadingOptions, IonicSafeString } from '@ionic/core';
+import { ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-folder',
@@ -14,7 +15,9 @@ import { LoadingOptions } from '@ionic/core';
 })
 export class FolderPage implements OnInit {
   public folder: string;
-  public content: Array<PlanoOrcamentario>
+  public content: Array<ItemPlanoOrcamentario>
+  toastObject = null;
+
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type':  'application/json',
@@ -22,10 +25,37 @@ export class FolderPage implements OnInit {
     })
   };
 
-  constructor(public loadingController: LoadingController, private activatedRoute: ActivatedRoute, private http: HttpClient, public alertController: AlertController) { }
+  constructor(public loadingController: LoadingController, private activatedRoute: ActivatedRoute, private http: HttpClient, public alertController: AlertController, public toastController: ToastController) { }
 
   ngOnInit() {
     this.init();
+  }
+  async presentToastWithOptions(obj: ItemPlanoOrcamentario, indexPlusOne: number) {
+    if (this.toastObject!=null) {
+      this.toastObject.dismiss();
+    }
+
+    let objDescricao : IonicSafeString = new IonicSafeString(indexPlusOne+'. '+obj.descricao.toString());
+      this.toastObject = await this.toastController.create({
+      header: 'Item do plano orçamentário '+obj.numAno,
+      message: objDescricao,
+      icon: 'information-circle',
+      position: 'top',
+      buttons: [
+        {
+          text: 'Fechar',
+          role: 'cancel',
+          handler: () => {
+            console.log('Cancel clicked');
+          }
+        }
+      ]
+    });
+    await this.toastObject.present();
+
+    
+    // const { role } = await toast.onDidDismiss();
+    // console.log('onDidDismiss resolved with role', role);
   }
   async init() {
     const loading = await this.loadingController.create({
@@ -38,7 +68,7 @@ export class FolderPage implements OnInit {
 
     this.folder = this.activatedRoute.snapshot.paramMap.get('id');
 
-    this.http.get<PlanoOrcamentario[]>(`https://api-transparencia.thedevsteps.com/plano-orcamentario/${this.folder}`, this.httpOptions)
+    this.http.get<ItemPlanoOrcamentario[]>(`https://api-transparencia.thedevsteps.com/plano-orcamentario/${this.folder}`, this.httpOptions)
     .pipe(
       catchError(this.handleError) // then handle the error
     )
