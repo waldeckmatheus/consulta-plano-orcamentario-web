@@ -24,7 +24,7 @@ Em construção...
 ### Instalação inicial
 #### Node version manager (NVM)
     $ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
-    $ nvm install 18.3.0
+    $ nvm install 16.10.0
     
 #### Ionic client
     $ npm install -g @ionic/cli
@@ -35,13 +35,29 @@ Em construção...
 
 ###### Cordova Android Version
     $ ionic cordova platform rm android
-    $ cordova platform add android@8.0.0
+    $ cordova platform add android@10.1.2
 
 ###### Cordova Telemetria
     $ cordova telemetry [on|off]
 
 #### Build for android
     $ ionic cordova build android --prod --release --verbose
+
+#### Resumo do build em container
+- https://github.com/waldeckmatheus/consulta-plano-orcamentario-web/blob/main/scriptBuildIntoContainer.sh
+
+#### Criação do arquivo de assinatura para realização de assinatura do APK utilizado em testes locais
+    $ keytool -genkey -v -keystore mykeystore.keystore -alias myandroidalias -keyalg RSA -keysize 2048 -validity 10000
+
+#### Geração do arquivo output.zip para assinatura do arquivo .aab a ser realizado no Google Play Console 
+    $ java -jar pepk.jar --keystore=mykeystore.keystore --alias=myandroidalias --output=output.zip --include-cert --encryptionkey=eb10fe8f7c7c9df715022017b00c6471f8ba8170b13049a11e6c09ffe3056a104a3bbe4ac5a955f4ba4fe93fc8cef27558a3eb9d2a529a2092761fb833b656cd48b9de6a
+
+- Utilização de pepk (Play Encrypt Private Key)
+- Utilização da Google Play Store Public Key= "valor atribuído na encryptionkey"
+   
+#### Assinatura do arquivos .aab e/ou .apk
+    $ jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore mykeystore.keystore app-release.aab myandroidalias
+    $ jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore mykeystore.keystore app-release-unsigned.apk myandroidalias
 
 ### Fontes
 | Nome  | URL |
