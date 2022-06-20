@@ -44,24 +44,24 @@ export class FolderPage implements OnInit {
       position: 'top',
       buttons: [
         {
-          text: 'Anterior',
+          text: '◅',
           role: 'itemAnterior',
           handler: () => {
             console.log('Anterior');
           }
         },
         {
-          text: 'Pŕoximo',
+          text: '▻',
           role: 'itemProximo',
           handler: () => {
             console.log('Próximo');
           }
         },
         {
-          text: 'Fechar',
+          text: 'X',
           role: 'cancel',
           handler: () => {
-            console.log('Fechar');
+            console.log('X');
           }
         }
       ]
