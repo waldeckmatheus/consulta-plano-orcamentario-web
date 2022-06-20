@@ -1,12 +1,13 @@
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { ItemPlanoOrcamentario } from './plano-orcamentario';
+import { ItemPlanoOrcamentario } from './item-plano-orcamentario';
 import { catchError, retry } from 'rxjs/operators';
 import { throwError } from 'rxjs';
 import { AlertController, LoadingController } from '@ionic/angular';
 import { LoadingOptions, IonicSafeString } from '@ionic/core';
 import { ToastController } from '@ionic/angular';
+
 
 @Component({
   selector: 'app-folder',
@@ -43,10 +44,24 @@ export class FolderPage implements OnInit {
       position: 'top',
       buttons: [
         {
+          text: 'Anterior',
+          role: 'itemAnterior',
+          handler: () => {
+            console.log('Anterior');
+          }
+        },
+        {
+          text: 'Pŕoximo',
+          role: 'itemProximo',
+          handler: () => {
+            console.log('Próximo');
+          }
+        },
+        {
           text: 'Fechar',
           role: 'cancel',
           handler: () => {
-            console.log('Cancel clicked');
+            console.log('Fechar');
           }
         }
       ]
@@ -54,8 +69,24 @@ export class FolderPage implements OnInit {
     await this.toastObject.present();
 
     
-    // const { role } = await toast.onDidDismiss();
-    // console.log('onDidDismiss resolved with role', role);
+    const { role } = await this.toastObject.onDidDismiss();
+    if (this.content != undefined && this.content!=null && this.content.length>0) {
+      if (role === 'itemProximo') {
+        if (indexPlusOne<this.content.length) {
+          this.presentToastWithOptions(this.content[indexPlusOne], indexPlusOne+1);
+        } else if (indexPlusOne>=this.content.length) {
+          this.presentToastWithOptions(this.content[0], 1);
+        }
+        console.error('content: ', this.content);
+      } else if (role === 'itemAnterior') {
+        if (indexPlusOne>1) {
+          this.presentToastWithOptions(this.content[indexPlusOne-1], indexPlusOne-1);
+        } else if (indexPlusOne<=1) {
+          this.presentToastWithOptions(this.content[this.content.length-1], this.content.length);
+        }
+      }
+      console.log('onDidDismiss resolved with role', role);
+    }
   }
   async init() {
     const loading = await this.loadingController.create({
@@ -68,6 +99,7 @@ export class FolderPage implements OnInit {
 
     this.folder = this.activatedRoute.snapshot.paramMap.get('id');
 
+    // repassar para service
     this.http.get<ItemPlanoOrcamentario[]>(`https://api-transparencia.thedevsteps.com/plano-orcamentario/${this.folder}`, this.httpOptions)
     .pipe(
       catchError(this.handleError) // then handle the error

@@ -16,52 +16,49 @@
 
   <div id="container">
     <strong class="capitalize">Autoestudo sobre Ionic, framework Angular e Plano Orçamentário.</strong>
-    <br/>
+    <br />
     <strong class="capitalize">Versões de estudo: Ionic 6 e Angular 13.</strong>
-    <br/>
-    <br/>
+    <br />
+    <br />
     <div>
-      <label><b>Nome</b></label><br/>
+      <label><b>Nome</b></label><br />
       <span style="color: black;">Waldeck Belo</span>
     </div>
-    <br/>
+    <br />
     <div>
-      <label><b>E-mail</b></label><br/>
+      <label><b>E-mail</b></label><br />
       <span style="color: black;"><a href="mailto:waldeckmatheus@gmail.com">waldeckmatheus@gmail.com</a></span>
     </div>
-    <br/>
+    <br />
 
     <div>
-      <label (click)="openDocumentacaoTutorialModal()"><b>Documentações e tutoriais</b></label><br/>
+      <label (click)="openDocumentacaoTutorialModal()"><b>Documentações e tutoriais</b></label><br />
       <button style="float: center" ion-button icon-only (click)="openDocumentacaoTutorialModal()">
         Acesse aqui: <ion-icon name="open"></ion-icon>
       </button>
-      
-      <ion-modal
-        [isOpen]="documentacaoTutorialOpen"
-        [canDismiss]="true"
-        [presentingElement]=""
-      >
+
+      <ion-modal [isOpen]="documentacaoTutorialOpen" [canDismiss]="true" [presentingElement]="">
         <ng-template>
           <ion-content>
             <ion-toolbar>
               <ion-title size="medium" style="background: rgba(0,0,0,0.1)">
-                Documentações e tutoriais 
+                Documentações e tutoriais
                 <button style="float: right" ion-button icon-only (click)="closeDocumentacaoTutorialModal()">
                   <ion-icon name="close"></ion-icon>
                 </button>
               </ion-title>
             </ion-toolbar>
-            
+
             <div id="containerModal">
-              <label style="padding-left: 1%; color: black; font-weight: bold;">Desenvolvimento do Consulta Plano Orçamentário App</label>
-              <br/>
-              <br/>
+              <label style="padding-left: 1%; color: black; font-weight: bold;">Desenvolvimento do Consulta Plano
+                Orçamentário App</label>
+              <br />
+              <br />
               <div *ngFor="let docInfo of docInfoArray">
-                <doc-info  [docInfo]="docInfo"></doc-info>
+                <doc-info [docInfo]="docInfo"></doc-info>
               </div>
-              <br/>
-            </div>           
+              <br />
+            </div>
           </ion-content>
         </ng-template>
       </ion-modal>
@@ -72,12 +69,17 @@
         </ion-thumbnail>
         <ion-label>{{item.label}}</ion-label>
       </ion-item> -->
-      
-    </div>
-    <br/>
-    <div>
-      <label><b>Versão</b></label><br/>
-      <span style="color: black;">1.0.1 - 2022-06-19</span>
+      <br /><br/>
+      <div>
+        <label><b>Código-fonte disponível em</b></label><br />
+        <span style="color: black;"><a
+            href="https://github.com/waldeckmatheus/consulta-plano-orcamentario-web">https://github.com/waldeckmatheus/consulta-plano-orcamentario-web</a></span>
+      </div>
+      <br />
+      <div>
+        <label><b>Versão</b></label><br />
+        <span style="color: black;">1.0.2 - 2022-06-20</span>
+      </div>
     </div>
   </div>
 </ion-content>

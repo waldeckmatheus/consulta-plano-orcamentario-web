@@ -78,7 +78,7 @@ export class FolderPage implements OnInit {
   }
 
   initDocCodigoFonte() {
-    this.docInfoC4.arrayDocTutorial.push(new DocumentacaoTutorial('https://docs.github.com/assets/cb-803/images/site/favicon.svg', 'https://docs.github.com/en'));
+    this.docInfoC4.arrayDocTutorial.push(new DocumentacaoTutorial('https://github.com/fluidicon.png', 'https://docs.github.com/en'));
     this.docInfoC4.arrayDocTutorial.push(new DocumentacaoTutorial('https://docs.gitlab.com/favicon.ico', 'https://docs.gitlab.com/'));
   }
 

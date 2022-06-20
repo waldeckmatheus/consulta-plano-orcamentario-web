@@ -11,7 +11,7 @@
   <!-- <strong class="capitalize">Consulta do plano orçamentário {{folder}}</strong> -->
     <ion-list>
       <ion-item *ngFor="let obj of content; let index = index">
-        <ion-label [class.odd]="index%2==1" [class.even]="index%2==0" (click)="presentToastWithOptions(obj, index+1)"><h5>{{index+1}}. {{obj.descricao}}</h5></ion-label>
+        <ion-label style="cursor: pointer;" [class.odd]="index%2==1" [class.even]="index%2==0" (click)="presentToastWithOptions(obj, index+1)"><h5>{{index+1}}. {{obj.descricao}}</h5></ion-label>
       </ion-item>
     </ion-list>
     
