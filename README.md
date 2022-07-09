@@ -24,7 +24,8 @@ Em construção...
 ### Instalação inicial
 #### Node version manager (NVM)
     $ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
-    $ nvm install 16.10.0
+    $ nvm install 18.5.0
+      - necessário: glibc >= 2.28 para a versão 18 do node
     
 #### Ionic client
     $ npm install -g @ionic/cli
