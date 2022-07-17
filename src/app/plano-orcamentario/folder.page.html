@@ -13,13 +13,13 @@
       <ion-title size="large">Orçamento Federal</ion-title>
     </ion-toolbar>
   </ion-header>
-
+<!-- TODO: Component -->
   <div id="container">
     <div style="padding-bottom: 10px;">
       <span class="font-weith:bold;"><ion-icon name="information-circle-outline"></ion-icon>Previsão e destinação anuais dos recursos a serem arrecadados.</span>
       <p class="text-justify">
-        <label *ngFor="let word of infoASplitted" (click)="infoWord(word)">
-         {{word}}
+        <label *ngFor="let element of infoASplitted" (click)="infoWord(element.word)" [class.highlight]="element.highlight"  (mouseover)="element.highlight=true" (mouseout)="element.highlight=false">
+         {{element.word}}
         </label>
       </p>
     </div>
@@ -27,8 +27,8 @@
     <div style="padding-bottom: 10px;">
       <span class="font-weith:bold;"><ion-icon name="information-circle-outline"></ion-icon>Equilíbrio das contas públicas e indica as prioridades do Governo para a sociedade.</span>
       <p class="text-justify">
-        <label *ngFor="let word of infoBSplitted" (click)="infoWord(word)">
-         {{word}}
+        <label *ngFor="let element of infoBSplitted" (click)="infoWord(element.word)" [class.highlight]="element.highlight"  (mouseover)="element.highlight=true" (mouseout)="element.highlight=false">
+         {{element.word}}
         </label>
       </p>
     </div>
@@ -36,8 +36,8 @@
     <div style="padding-bottom: 10px;">
       <span class="font-weith:bold;"><ion-icon name="information-circle-outline"></ion-icon>Elaboração anual do orçamento da união, estados e municípios.</span>
       <p class="text-justify">
-        <label *ngFor="let word of infoCSplitted" (click)="infoWord(word)">
-         {{word}}
+        <label *ngFor="let element of infoCSplitted" (click)="infoWord(element.word)" [class.highlight]="element.highlight"  (mouseover)="element.highlight=true" (mouseout)="element.highlight=false">
+         {{element.word}}
         </label>
       </p>
     </div>
@@ -45,8 +45,8 @@
     <div style="padding-bottom: 10px;">
       <span class="font-weith:bold;"><ion-icon name="information-circle-outline"></ion-icon>Planejamento de gastos para execução das políticas públicas.</span>
       <p class="text-justify">
-        <label *ngFor="let word of infoDSplitted" (click)="infoWord(word)">
-         {{word}}
+        <label *ngFor="let element of infoDSplitted" (click)="infoWord(element.word)" [class.highlight]="element.highlight"  (mouseover)="element.highlight=true" (mouseout)="element.highlight=false">
+         {{element.word}}
         </label>
       </p>
     </div>
