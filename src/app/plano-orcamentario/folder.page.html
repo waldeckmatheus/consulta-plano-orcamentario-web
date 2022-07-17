@@ -17,28 +17,37 @@
   <div id="container">
     <div style="padding-bottom: 10px;">
       <span class="font-weith:bold;"><ion-icon name="information-circle-outline"></ion-icon>Previsão e destinação anuais dos recursos a serem arrecadados.</span>
-      <p class="text-justify">O orçamento público é o instrumento de planejamento que detalha a previsão dos recursos a serem arrecadados (impostos e outras receitas estimadas) e a destinação desses recursos (ou seja, em quais despesas esses recursos serão utilizados) a cada ano. 
+      <p class="text-justify">
+        <label *ngFor="let word of infoASplitted" (click)="infoWord(word)">
+         {{word}}
+        </label>
       </p>
     </div>
 
     <div style="padding-bottom: 10px;">
       <span class="font-weith:bold;"><ion-icon name="information-circle-outline"></ion-icon>Equilíbrio das contas públicas e indica as prioridades do Governo para a sociedade.</span>
       <p class="text-justify">
-        Ao englobar receitas e despesas, o orçamento é peça fundamental para o equilíbrio das contas públicas e indica as prioridades do Governo para a sociedade.
+        <label *ngFor="let word of infoBSplitted" (click)="infoWord(word)">
+         {{word}}
+        </label>
       </p>
     </div>
 
     <div style="padding-bottom: 10px;">
       <span class="font-weith:bold;"><ion-icon name="information-circle-outline"></ion-icon>Elaboração anual do orçamento da união, estados e municípios.</span>
       <p class="text-justify">
-        A União, cada estado e cada município elaboram anualmente seu orçamento.
+        <label *ngFor="let word of infoCSplitted" (click)="infoWord(word)">
+         {{word}}
+        </label>
       </p>
     </div>
 
     <div style="padding-bottom: 10px;">
       <span class="font-weith:bold;"><ion-icon name="information-circle-outline"></ion-icon>Planejamento de gastos para execução das políticas públicas.</span>
       <p class="text-justify">
-        No Orçamento da União, é possível encontrar os valores que o Governo Federal pretende gastar com o seu funcionamento e na execução das políticas públicas, como as de saúde, educação, e segurança. Somente as despesas ali previstas podem ser executadas.
+        <label *ngFor="let word of infoDSplitted" (click)="infoWord(word)">
+         {{word}}
+        </label>
       </p>
     </div>
     <label><ion-icon name="flash"></ion-icon>Fonte: <a href="https://www.gov.br/economia/pt-br/assuntos/planejamento-e-orcamento/orcamento">https://www.gov.br/economia/pt-br/assuntos/planejamento-e-orcamento/orcamento</a></label>

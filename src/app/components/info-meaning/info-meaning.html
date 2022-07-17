@@ -1,0 +1,29 @@
+<div class="container">
+  <div>
+    Funcionalidade em construção...
+    <br/>
+
+    <button style="float: right" ion-button icon-only (click)="closeModal();">
+      <ion-icon name="close"></ion-icon>
+    </button>
+    <br/>
+    
+    <label style="padding-left: 1% ;color: #8c8c8c;font-weight: bold;">Palavra: {{word}}</label>
+
+    <ul [class.item-inner]="false" *ngFor="let infomeansItem of infoMeaning">
+      <li>
+        <ion-label>{{infomeansItem.class}}</ion-label>
+        
+
+        <ul [class.item-inner]="false" *ngFor="let meaning of infomeansItem.meanings">
+          <li>{{meaning | json}}</li>
+        </ul>
+
+      </li>
+      </ul>
+   
+    <hr>
+  </div>
+</div>
+
+

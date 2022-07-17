@@ -36,14 +36,14 @@
       <button style="float: center" ion-button icon-only (click)="openDocumentacaoTutorialModal()">
         Acesse aqui: <ion-icon name="open"></ion-icon>
       </button>
-
-      <ion-modal [isOpen]="documentacaoTutorialOpen" [canDismiss]="true" [presentingElement]="">
+      {{ modalDocumentacoesTutoriaisCtl | json}}
+      <ion-modal #modal [isOpen]="modalDocumentacoesTutoriaisCtl.documentacaoTutorialOpen" [canDismiss]="true" [presentingElement]="">
         <ng-template>
           <ion-content>
             <ion-toolbar>
               <ion-title size="medium" style="background: rgba(0,0,0,0.1)">
                 Documentações e tutoriais
-                <button style="float: right" ion-button icon-only (click)="closeDocumentacaoTutorialModal()">
+                <button style="float: right" ion-button icon-only (click)="closeDocumentacaoTutorialModal(); modal.dismiss();">
                   <ion-icon name="close"></ion-icon>
                 </button>
               </ion-title>
@@ -78,7 +78,7 @@
       <br />
       <div>
         <label><b>Versão</b></label><br />
-        <span style="color: black;">1.0.3 - 2022-07-09</span>
+        <span style="color: black;">1.0.4 - 2022-07-17</span>
       </div>
     </div>
   </div>

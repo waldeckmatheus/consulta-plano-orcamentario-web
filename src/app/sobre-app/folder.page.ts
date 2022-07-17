@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { AppService } from '../app.service';
 import { DocInfo } from '../components/doc-info/docInfo';
 import { DocumentacaoTutorial } from '../components/doc-info/documentacaoTutorial';
+import { ModalDocumentacoesTutoriaisCtl } from './modalDocumentacoesTutoriaisCtl';
 
 
 @Component({
@@ -12,7 +14,9 @@ import { DocumentacaoTutorial } from '../components/doc-info/documentacaoTutoria
 export class FolderPage implements OnInit {
   public folder: string;
   public title: string;
-  public documentacaoTutorialOpen: boolean;
+  public modalDocumentacoesTutoriaisCtl: ModalDocumentacoesTutoriaisCtl = {
+    documentacaoTutorialOpen: false
+  };
   docInfoC1: DocInfo = new DocInfo('Front-end');
   docInfoC2: DocInfo = new DocInfo('Front-end Builder');
   docInfoC3: DocInfo = new DocInfo('Container');
@@ -26,9 +30,11 @@ export class FolderPage implements OnInit {
   docInfoC11: DocInfo = new DocInfo('Ferramentas de desenvolvimento');
 
   docInfoArray: Array<DocInfo> = [];
-  constructor(private activatedRoute: ActivatedRoute) { }
+  constructor(private activatedRoute: ActivatedRoute,
+    private appService: AppService) { }
 
   ngOnInit() {
+    this.appService.setModalDocumentacoesTutoriais(this.modalDocumentacoesTutoriaisCtl);
     this.addDocInfosToArray();
     this.folder = this.activatedRoute.snapshot.paramMap.get('id');
     this.title = "Sobre o App";
@@ -59,10 +65,19 @@ export class FolderPage implements OnInit {
     this.docInfoArray.push(this.docInfoC11);
   }
   openDocumentacaoTutorialModal() {
-    this.documentacaoTutorialOpen = true;
+    if (this.modalDocumentacoesTutoriaisCtl.documentacaoTutorialOpen) {
+      this.modalDocumentacoesTutoriaisCtl.documentacaoTutorialOpen = false;
+      setTimeout(() => {
+        this.modalDocumentacoesTutoriaisCtl.documentacaoTutorialOpen = true;
+      }, 10);
+    } else {
+      this.modalDocumentacoesTutoriaisCtl.documentacaoTutorialOpen = true;
+    }
+    
+    
   }
   closeDocumentacaoTutorialModal() {
-    this.documentacaoTutorialOpen = false;
+    this.modalDocumentacoesTutoriaisCtl.documentacaoTutorialOpen = false;
   }
   initDocFrontendArray() {
     this.docInfoC1.arrayDocTutorial.push(new DocumentacaoTutorial('https://angular.io/assets/images/favicons/favicon-16x16.png', 'https://angular.io/docs'));

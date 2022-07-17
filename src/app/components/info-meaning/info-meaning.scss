@@ -1,0 +1,36 @@
+ion-menu-button {
+  color: var(--ion-color-primary);
+}
+
+#container {
+  text-align: left;
+  position: absolute;
+  left: 1%;
+  right: 2%;
+  top: 5%;
+}
+
+#container strong {
+  font-size: 20px;
+  line-height: 26px;
+}
+
+#container p {
+  padding-left: 2%;
+  font-size: 16px;
+  line-height: 22px;
+  color: #8c8c8c;
+  margin: 0;
+}
+
+#container a {
+  text-decoration: none;
+}
+#container ion-icon {
+  background: rgb(0,0,0,0.1); border-radius: 10px;
+}
+.text-justify {
+  text-align: justify;
+  text-justify: inter-word;
+  text-indent: 1%;
+}
